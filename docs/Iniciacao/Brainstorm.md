@@ -94,24 +94,39 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
    
 </p>
  
-### Requisitos elicitados
- 
-|ID|Descrição|
-|----|-------------|
+### Reeeequisitos elicitados
+
+| ID | Descrição |
+| ---- | ------------- |
+
 |BS01| O cliente...|
+
 |BS02| O cliente...|
+
 |BS03| O cliente...|
+
 |BS04| O cliente...|
+
 |BS05| O cliente...|
+
 |BS06| O cliente...|
+
 |BS07| O cliente...|
+
 |BS08| O cliente...|
+
 |BS09| O cliente...|
+
 |BS10| O produto...|
+
 |BS11| O produto...|
+
 |BS12| O produto...|
+
 |BS13| O produto...|
+
 |BS14| O produto...|
+
 |BS15| O produto...|
  
 ## Conclusão
