@@ -38,15 +38,16 @@
 - **Pré-condição:** Cliente está logado e com localização ativa.
 
 - **Fluxo Principal:**
-  - Cliente seleciona um restaurante.
-  - Cliente adiciona itens ao carrinho.
-  - Cliente escolhe a forma de pagamento (cartão/PIX).
-  - Sistema confirma o pedido e notifica o restaurante.
+
+    - Cliente seleciona um restaurante.
+    - Cliente adiciona itens ao carrinho.
+    - Cliente escolhe a forma de pagamento (cartão/PIX).
+    - Sistema confirma o pedido e notifica o restaurante.
 
 - **Fluxos Alternativos:**
 
-  - **FA1:** Pagamento recusado → Sistema sugere nova tentativa ou outro método.
-  - **FA2:** Restaurante indisponível → Sistema recomenda opções similares.
+    - **FA1:** Pagamento recusado → Sistema sugere nova tentativa ou outro método.
+    - **FA2:** Restaurante indisponível → Sistema recomenda opções similares.
 
 - **Pós-condição:** Pedido é registrado e entra na fila de preparo.
 
@@ -117,16 +118,19 @@ end note
 
 ### **Explicação**:
 1. **Atores**:
-   - `Cliente`: Interage com o sistema para fazer pedidos.
-   - `Restaurante` (Sistema): Recebe notificações de pedidos.
-   - `Entregador`: Recebe alertas para coleta/entrega.
+
+    - `Cliente`: Interage com o sistema para fazer pedidos.
+    - `Restaurante` (Sistema): Recebe notificações de pedidos.
+    - `Entregador`: Recebe alertas para coleta/entrega.
 
 2. **Fluxo Principal** (dentro do caso de uso `UC01`):
-   - Selecionar Restaurante → Adicionar Itens → Escolher Pagamento → Confirmar Pedido.
+   
+    - Selecionar Restaurante → Adicionar Itens → Escolher Pagamento → Confirmar Pedido.
 
 3. **Relacionamentos**:
-   - `<<include>>`: "Confirmar Pedido" **requer** "Notificar Restaurante".
-   - `<<extend>>`: Fluxos alternativos (pagamento recusado/restaurante indisponível).
+   
+    - `<<include>>`: "Confirmar Pedido" **requer** "Notificar Restaurante".
+    - `<<extend>>`: Fluxos alternativos (pagamento recusado/restaurante indisponível).
 
 4. **Notas**: Condições do cenário.
 
@@ -164,9 +168,10 @@ end note
 ---
 
 ### **Dica**:
+
 - Para ver o diagrama visualmente, cole o código em ferramentas como:
-  - [PlantText](https://www.planttext.com/)
-  - [PlantUML Web Server](http://www.plantuml.com/plantuml/uml/).
+    - [PlantText](https://www.planttext.com/)
+    - [PlantUML Web Server](http://www.plantuml.com/plantuml/uml/).
 
 ---
 
