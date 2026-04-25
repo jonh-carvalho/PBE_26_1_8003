@@ -34,15 +34,21 @@
 #### **UC01 - Realizar Pedido**
 
 - **Atores:** Cliente, Sistema.
+
 - **Pré-condição:** Cliente está logado e com localização ativa.
+
 - **Fluxo Principal:**
-  1. Cliente seleciona um restaurante.
-  2. Cliente adiciona itens ao carrinho.
-  3. Cliente escolhe a forma de pagamento (cartão/PIX).
-  4. Sistema confirma o pedido e notifica o restaurante.
+
+    - Cliente seleciona um restaurante.
+    - Cliente adiciona itens ao carrinho.
+    - Cliente escolhe a forma de pagamento (cartão/PIX).
+    - Sistema confirma o pedido e notifica o restaurante.
+
 - **Fluxos Alternativos:**
-  - **FA1:** Pagamento recusado → Sistema sugere nova tentativa ou outro método.
-  - **FA2:** Restaurante indisponível → Sistema recomenda opções similares.
+
+    - **FA1:** Pagamento recusado → Sistema sugere nova tentativa ou outro método.
+    - **FA2:** Restaurante indisponível → Sistema recomenda opções similares.
+
 - **Pós-condição:** Pedido é registrado e entra na fila de preparo.
 
 ---
@@ -112,16 +118,19 @@ end note
 
 ### **Explicação**:
 1. **Atores**:
-   - `Cliente`: Interage com o sistema para fazer pedidos.
-   - `Restaurante` (Sistema): Recebe notificações de pedidos.
-   - `Entregador`: Recebe alertas para coleta/entrega.
+
+    - `Cliente`: Interage com o sistema para fazer pedidos.
+    - `Restaurante` (Sistema): Recebe notificações de pedidos.
+    - `Entregador`: Recebe alertas para coleta/entrega.
 
 2. **Fluxo Principal** (dentro do caso de uso `UC01`):
-   - Selecionar Restaurante → Adicionar Itens → Escolher Pagamento → Confirmar Pedido.
+   
+    - Selecionar Restaurante → Adicionar Itens → Escolher Pagamento → Confirmar Pedido.
 
 3. **Relacionamentos**:
-   - `<<include>>`: "Confirmar Pedido" **requer** "Notificar Restaurante".
-   - `<<extend>>`: Fluxos alternativos (pagamento recusado/restaurante indisponível).
+   
+    - `<<include>>`: "Confirmar Pedido" **requer** "Notificar Restaurante".
+    - `<<extend>>`: Fluxos alternativos (pagamento recusado/restaurante indisponível).
 
 4. **Notas**: Condições do cenário.
 
@@ -159,9 +168,10 @@ end note
 ---
 
 ### **Dica**:
+
 - Para ver o diagrama visualmente, cole o código em ferramentas como:
-  - [PlantText](https://www.planttext.com/)
-  - [PlantUML Web Server](http://www.plantuml.com/plantuml/uml/).
+    - [PlantText](https://www.planttext.com/)
+    - [PlantUML Web Server](http://www.plantuml.com/plantuml/uml/).
 
 ---
 
@@ -172,6 +182,7 @@ Aqui está o protótipo de **telas do aplicativo de delivery** usando **Salt (Pl
 ---
 
 ### **Código PlantUML (Salt)**
+
 ```plantuml
 @startsalt
 {
@@ -190,7 +201,10 @@ Aqui está o protótipo de **telas do aplicativo de delivery** usando **Salt (Pl
     [Ver Cardápio] | [Voltar]
   }
 }
+@endsalt
+```
 
+```plantuml
 @startsalt
 {
   {^
@@ -205,7 +219,10 @@ Aqui está o protótipo de **telas do aplicativo de delivery** usando **Salt (Pl
     [Adicionar ao Carrinho] | [Voltar]
   }
 }
+@endsalt
+```
 
+```plantuml
 @startsalt
 {
   {^
@@ -222,7 +239,10 @@ Aqui está o protótipo de **telas do aplicativo de delivery** usando **Salt (Pl
     [Continuar para Pagamento] | [Editar]
   }
 }
+@endsalt
+```
 
+```plantuml
 @startsalt
 {
   {^
@@ -237,7 +257,10 @@ Aqui está o protótipo de **telas do aplicativo de delivery** usando **Salt (Pl
     [Finalizar Pedido] | [Cancelar]
   }
 }
+@endsalt
+```
 
+```plantuml
 @startsalt
 {
   {^
@@ -251,6 +274,7 @@ Aqui está o protótipo de **telas do aplicativo de delivery** usando **Salt (Pl
     [Acompanhar Pedido] | [Voltar ao Início]
   }
 }
+@endsalt
 ```
 
 ---
@@ -285,25 +309,32 @@ Aqui está o protótipo de **telas do aplicativo de delivery** usando **Salt (Pl
 ---
 
 ### **Exemplo de Saída (Estilizada)**  
-```
-+------------------------------+
-| FastDelivery - Buscar Restaur.|
-+------------------------------+
-| [🔍 Buscar...] | [Filtros ▼]  |
-+------------------------------+
-| (X) Restaurante A | ⭐ 4.5    |
-| () Restaurante B  | ⭐ 4.2    |
-+------------------------------+
-| [Ver Cardápio] | [Voltar]    |
-+------------------------------+
+
+```plantuml
+@startsalt
+{
+  {^ <b>FastDelivery - Buscar Restaurantes</b> }
+  {
+    [🔍 Buscar...] | [Filtros ▼]
+  }
+  {
+    (X) Restaurante A | ⭐ 4.5
+    () Restaurante B | ⭐ 4.2
+  }
+  {
+    [Ver Cardápio] | [Voltar]
+  }
+}
+@endsalt
 ```
 
 ---
 
 ### **Personalização**  
 - Para adicionar **mais telas** (ex.: login, acompanhamento de entrega):  
-  ```plantuml
-  @startsalt
+
+```plantuml
+@startsalt
   {
     {^ <b>Login</b> }
     {
@@ -314,11 +345,12 @@ Aqui está o protótipo de **telas do aplicativo de delivery** usando **Salt (Pl
       [Entrar] | [Criar Conta]
     }
   }
-  ```
+@endsalt
+```
 
   ---
 
-  ### Diagrama de Classe
+### Diagrama de Classe
 
   Aqui está o **diagrama de classes conceitual** para o sistema de delivery, representando os principais conceitos e seus relacionamentos:
 
